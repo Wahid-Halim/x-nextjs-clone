@@ -10,9 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <div className="flex justify-between max-w-6xl  m-auto">
-          <aside>
+      <body className="bg-neutral-950">
+        <div className="flex justify-between max-w-6xl  m-auto ">
+          <aside className="hidden sm:inline border-r border-r-stone-700 h-screen pr-3">
             <Sidebar />
           </aside>
           <main>{children}</main>

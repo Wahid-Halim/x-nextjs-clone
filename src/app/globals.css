@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.icon {
+  @apply cursor-pointer  text-stone-50  rounded-full transition-all duration-200;
+}
