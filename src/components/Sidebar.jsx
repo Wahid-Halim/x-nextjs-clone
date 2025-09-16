@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { FaXTwitter } from "react-icons/fa6";
 import { HiHome } from "react-icons/hi";
@@ -5,8 +7,13 @@ import { TbCircleLetterBFilled, TbCricket } from "react-icons/tb";
 import { TbCircleLetterT } from "react-icons/tb";
 import Button from "./Button";
 
+//NextAuth
+import { signIn, signOut, useSession } from "next-auth/react";
+
 // BuzzTalk
-const Sidebar = () => {
+const Sidebar =  () => {
+  const { data: session } = useSession();
+
   return (
     <div className="flex flex-col ">
       <Link
@@ -25,7 +32,15 @@ const Sidebar = () => {
         <span className="font-bold hidden xl:inline">Home</span>
       </Link>
 
-      <Button className="mt-3 hidden xl:inline-block">Sign In</Button>
+      {session ? (
+        <Button className="mt-3 hidden xl:inline-block" onClick={signOut}>
+          Sign Out
+        </Button>
+      ) : (
+        <Button className="mt-3 hidden xl:inline-block" onClick={signIn}>
+          Sign In
+        </Button>
+      )}
     </div>
   );
 };

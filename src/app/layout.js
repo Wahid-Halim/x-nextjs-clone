@@ -1,6 +1,7 @@
 import Sidebar from "@/components/Sidebar";
 import "./globals.css";
 import News from "@/components/News";
+import Provider from "@/components/Provider";
 
 export const metadata = {
   title: "Create Next App",
@@ -11,15 +12,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-black">
-        <div className="flex justify-between max-w-6xl  m-auto ">
-          <aside className="hidden sm:inline border-r border-r-stone-700 h-screen pr-3">
-            <Sidebar />
-          </aside>
-          <main>{children}</main>
-          <div className="pl-3 xl:flex-col h-screen border-l border-l-stone-800 hidden lg:flex w-[24rem]">
-            <News />
+        <Provider>
+          <div className="flex justify-between max-w-6xl  m-auto ">
+            <aside className="hidden sm:inline border-r border-r-stone-700 h-screen pr-3">
+              <Sidebar />
+            </aside>
+            <main>{children}</main>
+            <div className="pl-3 xl:flex-col h-screen border-l border-l-stone-800 hidden lg:flex w-[24rem]">
+              <News />
+            </div>
           </div>
-        </div>
+        </Provider>
       </body>
     </html>
   );
