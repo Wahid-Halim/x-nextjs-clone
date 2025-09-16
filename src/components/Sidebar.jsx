@@ -8,7 +8,7 @@ import Button from "./Button";
 // BuzzTalk
 const Sidebar = () => {
   return (
-    <div className="flex flex-col  w-[200px] ">
+    <div className="flex flex-col ">
       <Link
         href="/"
         className="flex p-3 hover:bg-[#1F1F1F] rounded-full w-fit "
