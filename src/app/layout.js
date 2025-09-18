@@ -13,11 +13,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-black">
         <Provider>
-          <div className="flex justify-between max-w-6xl  m-auto ">
+          <div className="grid grid-cols-[210px_1fr_300px] max-w-[1050px] m-auto">
             <aside className="hidden sm:inline border-r border-r-stone-700 h-screen pr-3">
               <Sidebar />
             </aside>
-            <main>{children}</main>
+            <main className="">{children}</main>
             <div className="pl-3 xl:flex-col h-screen border-l border-l-stone-800 hidden lg:flex w-[24rem]">
               <News />
             </div>

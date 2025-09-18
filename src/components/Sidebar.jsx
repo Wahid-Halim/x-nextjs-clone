@@ -13,10 +13,11 @@ import MiniProfile from "./MiniProfile";
 
 // BuzzTalk
 const Sidebar = () => {
-  const { data: session, status } = useSession();
+  // it's useSession hook that's return user data
+  const { data: session } = useSession();
 
   return (
-    <div className="flex flex-col justify-between  h-screen">
+    <div className="flex flex-col justify-between h-screen">
       <div>
         <Link
           href="/"
